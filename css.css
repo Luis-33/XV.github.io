@@ -1,0 +1,605 @@
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    overflow-x: hidden;
+}
+
+.nombre, h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 42px;
+}
+
+h2, h3 {
+  letter-spacing: 1px;
+}
+
+
+/* Bloquear scroll */
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+}
+
+/* Fondo */
+.fondo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('img/Foto2.jpg') center/cover no-repeat;
+    filter: blur(6px) brightness(0.6);
+    z-index: -1;
+}
+
+/* Partículas */
+.particulas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Sobre */
+/* CONTENEDOR */
+.sobre {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 999;
+}
+
+/* ENVOLTURA */
+.envoltura {
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+
+/* BASE DEL SOBRE */
+.carta {
+    background: #f5e6c8;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s ease;
+}
+
+/* TAPA */
+.tapa {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid #e6d3ac;
+    transform-origin: top;
+    transition: transform 0.6s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* FOTO */
+.foto {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.foto img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* NOMBRE */
+.nombre {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* BOTÓN */
+.btnAbrir {
+    margin-top: 20px;
+    color: white;
+    background: rgba(150, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    
+}
+
+/* ✨ HOVER EFECTO */
+.sobre:hover .tapa {
+    transform: rotateX(-180deg);
+}
+
+.sobre:hover .carta {
+    transform: translateY(-20px);
+}
+
+/* Audio */
+#audioBtn {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    background: black;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Partículas */
+.particula {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    opacity: 0.7;
+    border-radius: 50%;
+    animation: flotar 10s linear infinite;
+}
+
+@keyframes flotar {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(-10vh);
+    }
+}
+
+/* ===== CONTROL DE VISIBILIDAD ===== */
+/* .pantallaFinal,
+.seccion {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* Visible */
+.visible {
+    opacity: 1;
+} */
+.pantallaFinal,
+.seccion {
+    opacity: 0;
+    pointer-events: none; /* 🔥 CLAVE */
+}
+
+.visible {
+    opacity: 1;
+    pointer-events: auto; /* 🔥 vuelve interactivo */
+}
+
+/* ===== PORTADA ===== */
+.pantallaFinal {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.fondoFinal {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: url('img/Foto1.jpg') center/cover no-repeat;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.contenidoFinal {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* ===== SECCIÓN 2 ===== */
+.seccion {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.seccion2 {
+    background: #f4f4f4;
+    color: #333;
+}
+
+.contenidoSeccion2 {
+    max-width: 600px;
+    text-align: center;
+}
+
+.contenidoSeccion2 h1 {
+    font-size: 40px;
+}
+
+.imgSeccion2 img {
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 30px;
+}
+
+/* Animación scroll */
+.ocultoScroll {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s ease;
+}
+
+.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== SECCIÓN 3 ===== */
+.seccion3 {
+    background: #ffffff;
+    color: #333;
+}
+
+/* Contenido */
+.contenidoSeccion3 {
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Contador */
+.contadorBox {
+    margin-bottom: 40px;
+}
+
+.contadorBox h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#contadorDias {
+    font-size: 60px;
+    font-weight: bold;
+    color: #b30000;
+}
+
+/* Imagen */
+.imgSeccion3 img {
+    width: 100%;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+/* Texto */
+.textoSeccion3 {
+
+    line-height: 1.6;
+}
+
+.contadorTiempo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.contadorTiempo div {
+    text-align: center;
+}
+
+.contadorTiempo span {
+    font-size: 40px;
+    font-weight: bold;
+    color: #b30000;
+}
+
+.contadorTiempo p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#contadorDias {
+    animation: aparecer 1s ease;
+}
+
+.contadorTiempo span {
+    min-width: 50px;
+    display: inline-block;
+    text-align: center;
+}
+
+#segundos {
+    color: #ff0000;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== SECCIÓN 4 ===== */
+.seccion4 {
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Contenedor */
+.contenidoSeccion4 {
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Título */
+.tituloSeccion4 {
+
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+/* Bloques */
+.bloqueFamilia {
+    margin-bottom: 40px;
+}
+
+/* Subtítulos */
+.bloqueFamilia h3 {
+
+    margin-bottom: 15px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+/* Nombres */
+.nombre {
+    font-size: 25px;
+    margin: 5px 0;
+}
+
+/* & */
+.ampersand {
+    display: block;
+
+    margin: 5px 0;
+    opacity: 0.7;
+}
+
+.contenidoSeccion4 {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.seccion4.mostrar .contenidoSeccion4 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== SECCIÓN 5 ===== */
+.seccion5 {
+    background: #ffffff;
+    color: #333;
+}
+
+/* Contenedor */
+.contenidoSeccion5 {
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Bloques */
+.bloqueEvento {
+    margin-bottom: 50px;
+}
+
+/* Iconos */
+.icono {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+/* Títulos */
+.bloqueEvento h3 {
+
+    margin-bottom: 15px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* Línea */
+.linea {
+    width: 60px;
+    height: 2px;
+    background: #b30000;
+    margin: 15px auto;
+}
+
+/* Fecha */
+.fechaEvento {
+
+    margin: 10px 0;
+}
+
+/* Lugar */
+.lugarEvento {
+
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Botón */
+.btnMapa {
+    background: transparent;
+    border: 1px solid #b30000;
+    color: #b30000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.btnMapa:hover {
+    background: #b30000;
+    color: white;
+}
+
+/* ===== SECCIÓN FINAL ===== */
+.seccionFinal {
+    background: #111;
+    color: white;
+}
+
+/* Contenedor */
+.contenidoFinalSeccion {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ===== CARRUSEL ===== */
+.carrusel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* Botones */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* ===== RSVP ===== */
+.rsvp {
+    margin-top: 40px;
+}
+
+.rsvp h2 {
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+/* Botón */
+.btnConfirmar {
+  display: inline-block;
+  background: #b30000;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btnConfirmar:hover {
+  background: #800000;
+}
+
+/* Animaciones individuales */
+.anim-item {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: all 0.8s ease;
+}
+
+.anim-item.mostrar {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Al abrir la invitacion */
+/* Estado inicial oculto */
+.pantallaFinal {
+  opacity: 0;
+  transform: scale(1.1);
+  filter: blur(10px);
+  transition: all 1.2s ease;
+}
+
+/* Cuando aparece */
+.pantallaFinal.visible {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+/* Texto animado independiente */
+.contenidoFinal h1,
+.contenidoFinal .frase,
+.contenidoFinal .fecha {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+  
+}
+
+/* Activación escalonada */
+.pantallaFinal.visible h1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.pantallaFinal.visible .frase {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+  
+  
+}
+
+.pantallaFinal.visible .fecha {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
