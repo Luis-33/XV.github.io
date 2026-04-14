@@ -1,13 +1,17 @@
 body {
     margin: 0;
     font-family: "Montserrat", sans-serif;
-    font-size: 25px;
+    font-size: clamp(16px, 4vw, 20px);
     overflow-x: hidden;
 }
 
 .nombre, h1 {
   font-family: "Great Vibes", cursive;
-  font-size: 42px;
+  font-size: clamp(22px, 5vw, 30px);
+}
+ h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(28px, 6vw, 42px);
 }
 
 h2, h3 {
@@ -602,4 +606,60 @@ h2, h3 {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 1s;
+}
+@media (max-width: 768px) {
+
+  .envoltura {
+    width: 250px;
+    height: 170px;
+  }
+
+  .foto {
+    width: 90px;
+  }
+
+  .contenidoFinal {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .contenidoSeccion2,
+  .contenidoSeccion3,
+  .contenidoSeccion4,
+  .contenidoSeccion5 {
+    padding: 0 15px;
+  }
+
+  .contadorTiempo {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .contadorTiempo span {
+    font-size: 28px;
+  }
+
+  .contadorTiempo p {
+    font-size: 12px;
+  }
+
+  .imgSeccion2 img,
+  .imgSeccion3 img {
+    border-radius: 20px;
+  }
+
+  .bloqueEvento {
+    margin-bottom: 30px;
+  }
+
+  .btnMapa,
+  .btnConfirmar {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .carrusel {
+    border-radius: 15px;
+  }
+
 }
