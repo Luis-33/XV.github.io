@@ -186,3 +186,13 @@ function animarSecciones() {
 window.addEventListener("scroll", animarSecciones);
 
 });
+
+// scroll
+const indicador = document.getElementById("scrollIndicator");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50 && indicador) {
+    indicador.style.opacity = "0";
+    indicador.style.pointerEvents = "none";
+  }
+});

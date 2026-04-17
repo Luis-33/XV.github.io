@@ -665,3 +665,90 @@ h2, h3 {
   }
 
 }
+
+.seccionDress {
+  background: #ffffff;
+  color: #333;
+}
+
+.contenidoDress {
+  max-width: 500px;
+  text-align: center;
+}
+
+.iconoDress {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.textoDress {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.notaDress {
+  margin-top: 10px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.notaDress span {
+  color: #6ec6ff; /* azul cielo bonito */
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .iconoDress {
+    font-size: 40px;
+  }
+
+  .textoDress {
+    font-size: 15px;
+  }
+
+  .notaDress {
+    font-size: 14px;
+  }
+}
+.imgDress img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* Scroll */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  opacity: 0;
+  animation: aparecerIndicador 2s ease forwards;
+  animation-delay: 1.5s;
+}
+
+/* Flecha */
+.flecha {
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg);
+  margin: 10px auto 0;
+  animation: bajar 1.5s infinite;
+}
+
+/* Animación de bajada */
+@keyframes bajar {
+  0% { transform: translateY(0) rotate(-45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(15px) rotate(-45deg); opacity: 0; }
+}
+
+/* Fade in inicial */
+@keyframes aparecerIndicador {
+  to { opacity: 1; }
+}
