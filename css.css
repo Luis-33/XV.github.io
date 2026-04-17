@@ -719,7 +719,7 @@ h2, h3 {
 /* Scroll */
 .scroll-indicator {
   position: absolute;
-  bottom: 30px;
+  bottom: 200px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
